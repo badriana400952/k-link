@@ -7,6 +7,7 @@ import {
     Td,
     TableContainer,
     Container,
+    Button,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { ApiData } from '../services/api';
@@ -34,7 +35,7 @@ const TableTransaksi = () => {
                 <TableContainer>
                     <Table variant='simple'>
                         <Thead>
-                            <Tr>
+                            <Tr bg={'gray.100'}>
                                 <Th>No </Th>
                                 <Th>Invoice Number </Th>
                                 <Th>invoice Date</Th>
@@ -43,6 +44,7 @@ const TableTransaksi = () => {
                                 <Th>Total Anmount</Th>
                                 <Th>Total Count</Th>
                                 <Th>Product Detail</Th>
+                                <Th>Action </Th>
                             </Tr>
                         </Thead>
                         <Tbody>
@@ -57,6 +59,10 @@ const TableTransaksi = () => {
                                         <Td>{item.total_amount}</Td>
                                         <Td>{item.total_count}</Td>
                                         <Td>{item.product_detail}</Td>
+                                        <Td >
+                                            <Button mx={2}>Edit</Button>
+                                            <Button>Delete</Button>
+                                        </Td>
                                     </Tr>
                                 ))
                             }

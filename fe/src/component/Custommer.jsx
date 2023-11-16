@@ -7,6 +7,7 @@ import {
     Td,
     TableContainer,
     Container,
+    Button,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { ApiData } from '../services/api';
@@ -34,18 +35,23 @@ const Custommer = () => {
                 <TableContainer>
                     <Table variant='simple'>
                         <Thead>
-                            <Tr>
+                            <Tr bg={'gray.100'}>
                                 <Th>No</Th>
                                 <Th>Custommer </Th>
+                                <Th>Action </Th>
 
                             </Tr>
                         </Thead>
                         <Tbody>
                             {
-                                data.map((item,index) => (
+                                data.map((item, index) => (
                                     <Tr key={item.id}>
                                         <Td>{index + 1}</Td>
                                         <Td>{item.firstName}</Td>
+                                        <Td >
+                                            <Button mx={2}>Edit</Button>
+                                            <Button>Delete</Button>
+                                        </Td>
                                     </Tr>
                                 ))
                             }
